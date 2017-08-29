@@ -1,10 +1,100 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:InfosNutritions.Helpers.Converters;assembly=InfosNutritions"
              x:Class="InfosNutritions.App">
 	<Application.Resources>
+	    <ResourceDictionary>
+	        <!-- Colors -->
+	        <Color x:Key="MyOrange">#EC7404</Color>
+	        <Color x:Key="Warning">#F0AD4E</Color>
+	        <Color x:Key="MyGreen">#41A62A</Color>
+	        <Color x:Key="MyBlue">#235E7A</Color>
+	        <Color x:Key="Alert">#E05555</Color>
+	        <Color x:Key="MyGray">#838383</Color>
+	        <Color x:Key="MyDarkGray">#959595</Color>
+	        <Color x:Key="MyLightGray">#EDEDED</Color>
+	        <Color x:Key="MyLightGray95">#F3EDEDED</Color>
 
-		<!-- Application resource dictionary -->
+	        <!-- converters -->
+	        <converters:ObjectNotEmptyValueConverter x:Key="IsNotEmptyChecker"></converters:ObjectNotEmptyValueConverter>
+	        <converters:InverseBoolConverter x:Key="InverseBool"></converters:InverseBoolConverter>
 
+	        <!-- Sizes -->
+	        <x:Double x:Key="Big">24</x:Double>
+	        <x:Double x:Key="SmallPlus">16</x:Double>
+	        <x:Double x:Key="NormalGap">8</x:Double>
+	        <x:Double x:Key="SmallGap">5</x:Double>
+	        <x:Double x:Key="LargeGap">16</x:Double>
+	        <x:Double x:Key="XlargeGap">24</x:Double>
+
+	        <!-- margins -->
+	        <Thickness x:Key="NormalMargin" Left="{StaticResource NormalGap}" Right="{StaticResource NormalGap}" Top="{StaticResource NormalGap}" Bottom="{StaticResource NormalGap}"></Thickness>
+	        <Thickness x:Key="HNormalVSmallMargin" Left="{StaticResource NormalGap}" Right="{StaticResource NormalGap}" Top="{StaticResource SmallGap}" Bottom="{StaticResource SmallGap}"></Thickness>
+	        <Thickness x:Key="LargeMargin" Left="{StaticResource LargeGap}" Right="{StaticResource LargeGap}" Top="{StaticResource LargeGap}" Bottom="{StaticResource LargeGap}"></Thickness>
+	        <Thickness x:Key="HNormalVLargeLMargin" Left="{StaticResource NormalGap}" Right="{StaticResource NormalGap}" Top="{StaticResource LargeGap}" Bottom="{StaticResource LargeGap}"></Thickness>
+	        <Thickness x:Key="HLargeVXlargeMargin" Left="{StaticResource LargeGap}" Right="{StaticResource LargeGap}" Top="{StaticResource XlargeGap}" Bottom="{StaticResource XlargeGap}"></Thickness>
+	        <Thickness x:Key="ZeroMargin" Left="0" Right="0" Top="0" Bottom="0"></Thickness>
+
+	        <!-- Styles -->
+	        <!-- label -->
+	        <Style x:Key="BaseLabelStyle" TargetType="Label">
+	            <Setter Property="TextColor" Value="{StaticResource MyDarkGray}"></Setter>
+	        </Style>
+	        <Style x:Key="TitleLabelStyle" TargetType="Label" BaseResourceKey="BaseLabelStyle">
+	            <Setter Property="Margin" Value="{StaticResource HLargeVXlargeMargin}"></Setter>
+	            <Setter Property="FontSize" Value="{StaticResource Big}"></Setter>
+	            <Setter Property="HorizontalTextAlignment" Value="Center"></Setter>
+	            <Setter Property="HorizontalOptions" Value="CenterAndExpand"></Setter>
+	        </Style>
+	        <Style x:Key="SubTitleLabelStyle" TargetType="Label" BaseResourceKey="BaseLabelStyle">
+	            <Setter Property="Margin" Value="{StaticResource HNormalVLargeLMargin}"></Setter>
+	            <Setter Property="FontSize" Value="Large"></Setter>
+	            <Setter Property="HorizontalTextAlignment" Value="Center"></Setter>
+	            <Setter Property="HorizontalOptions" Value="Center"></Setter>
+	        </Style>
+	        <Style x:Key="NormalLabelStyle" TargetType="Label" BaseResourceKey="BaseLabelStyle">
+	            <Setter Property="Margin" Value="{StaticResource NormalMargin}"></Setter>
+	            <Setter Property="FontSize" Value="Medium"></Setter>
+	            <Setter Property="HorizontalTextAlignment" Value="Center"></Setter>
+	            <Setter Property="HorizontalOptions" Value="Center"></Setter>
+	        </Style>
+	        <Style x:Key="NoMarginNormalLabelStyle" TargetType="Label" BaseResourceKey="NormalLabelStyle">
+	            <Setter Property="Margin" Value="0"></Setter>
+	        </Style>
+	        <!-- button -->
+	        <Style x:Key="BaseButtonStyle" TargetType="Button">
+	            <Setter Property="FontSize" Value="Medium"></Setter>
+	            <Setter Property="BorderRadius" Value="10"></Setter>
+	            <Setter Property="TextColor" Value="White"></Setter>
+	        </Style>
+
+	        <Style x:Key="NormalButtonStyle" TargetType="Button" BaseResourceKey="BaseButtonStyle">
+	            <Setter Property="BackgroundColor" Value="{StaticResource MyBlue}"></Setter>
+	        </Style>
+	        <Style x:Key="ValidateButtonStyle" TargetType="Button" BaseResourceKey="BaseButtonStyle">
+	            <Setter Property="BackgroundColor" Value="{StaticResource MyGreen}"></Setter>
+	        </Style>
+	        <Style x:Key="WarningButtonStyle" TargetType="Button" BaseResourceKey="BaseButtonStyle">
+	            <Setter Property="BackgroundColor" Value="{StaticResource Warning}"></Setter>
+	        </Style>
+	        <Style x:Key="AlertButtonStyle" TargetType="Button" BaseResourceKey="BaseButtonStyle">
+	            <Setter Property="BackgroundColor" Value="{StaticResource Alert}"></Setter>
+	        </Style>
+	        <Style x:Key="QuietButtonStyle" TargetType="Button" BaseResourceKey="BaseButtonStyle">
+	            <Setter Property="BackgroundColor" Value="{StaticResource MyGray}"></Setter>
+	        </Style>
+	        <Style x:Key="ClearButtonStyle" TargetType="Button" BaseResourceKey="BaseButtonStyle">
+	            <Setter Property="BackgroundColor" Value="Transparent"></Setter>
+	            <Setter Property="TextColor" Value="{StaticResource MyBlue}"></Setter>
+	            <Setter Property="BorderWidth" Value="0"></Setter>
+	            <Setter Property="BorderColor" Value="Transparent"></Setter>
+	        </Style>
+
+	        <!-- MasterDetailPage Design -->
+	        <Style TargetType="NavigationPage">
+	            <Setter Property="BackgroundColor" Value="{StaticResource MyLightGray}"></Setter>
+	        </Style>
+	    </ResourceDictionary>
 	</Application.Resources>
 </Application>

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using InfosNutritions.Entities;
 
 namespace InfosNutritions.Services
 {

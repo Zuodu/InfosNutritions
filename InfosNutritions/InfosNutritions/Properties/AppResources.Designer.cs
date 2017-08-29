@@ -62,7 +62,7 @@ namespace InfosNutritions.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to https://fr.openfoodfacts.org/api/v0/produit/.
         /// </summary>
         internal static string OpenFoodFacts_BaseURI {
             get {
@@ -76,6 +76,15 @@ namespace InfosNutritions.Properties {
         internal static string OpenFoodFacts_URIExtension {
             get {
                 return ResourceManager.GetString("OpenFoodFacts_URIExtension", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 20.
+        /// </summary>
+        internal static string RecentSeach_Capacity {
+            get {
+                return ResourceManager.GetString("RecentSeach_Capacity", resourceCulture);
             }
         }
     }

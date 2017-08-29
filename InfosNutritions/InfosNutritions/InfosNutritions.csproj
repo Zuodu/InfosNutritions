@@ -38,6 +38,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Entities\FoodProduct.cs" />
+    <Compile Include="Helpers\Converters\InverseBoolConverter.cs" />
+    <Compile Include="Helpers\Converters\ObjectNotEmptyValueConverter.cs" />
     <Compile Include="Helpers\MyHttpClient.cs" />
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Init\Setup.cs" />
@@ -54,15 +57,21 @@
       <DependentUpon>AppResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\DataProvider.cs" />
+    <Compile Include="Providers\IDataProvider.cs" />
     <Compile Include="Services\DataAccessServices.cs" />
     <Compile Include="Services\IDataAccessServices.cs" />
     <Compile Include="Services\ISettingsServices.cs" />
+    <Compile Include="Services\SettingsServices.cs" />
+    <Compile Include="UI\Components\PageModels\ScannerPageModel.cs" />
     <Compile Include="UI\Globalization\Lang.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Lang.resx</DependentUpon>
     </Compile>
     <Compile Include="UI\Globalization\TranslateExtension.cs" />
+    <Compile Include="UI\Screens\PageModels\LoginPageModel.cs" />
+    <Compile Include="UI\Templates\PickerPageModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainPage.xaml">
@@ -140,11 +149,10 @@
     <None Include="FodyWeavers.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Entities\" />
-    <Folder Include="Providers\" />
-    <Folder Include="UI\Components\" />
-    <Folder Include="UI\Screens\" />
-    <Folder Include="UI\Templates\" />
+    <Folder Include="UI\Components\Models\" />
+    <Folder Include="UI\Components\Pages\" />
+    <Folder Include="UI\Screens\Models\" />
+    <Folder Include="UI\Screens\Pages\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Fody.2.1.2\build\portable-net+sl+win+wpa+wp\Fody.targets" Condition="Exists('..\..\packages\Fody.2.1.2\build\portable-net+sl+win+wpa+wp\Fody.targets')" />

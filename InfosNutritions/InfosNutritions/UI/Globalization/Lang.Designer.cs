@@ -78,5 +78,32 @@ namespace InfosNutritions.UI.Globalization {
                 return ResourceManager.GetString("App_Name", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Le nom d&apos;utilisateur ou le mot de passe ne correspond pas. Veuillez réessayer.
+        /// </summary>
+        internal static string Login_Error_Body {
+            get {
+                return ResourceManager.GetString("Login_Error_Body", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Oups ! Saisie erronée....
+        /// </summary>
+        internal static string Login_Error_Title {
+            get {
+                return ResourceManager.GetString("Login_Error_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ok.
+        /// </summary>
+        internal static string Ok {
+            get {
+                return ResourceManager.GetString("Ok", resourceCulture);
+            }
+        }
     }
 }

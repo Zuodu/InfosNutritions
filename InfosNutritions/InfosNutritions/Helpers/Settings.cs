@@ -22,7 +22,9 @@ namespace InfosNutritions.Helpers
 		#region Setting Constants
 
 		private const string SettingsKey = "settings_key";
-		private static readonly string SettingsDefault = string.Empty;
+	    private const string RecentSearch = "recent_search";
+
+        private static readonly string SettingsDefault = string.Empty;
 
 		#endregion
 
@@ -39,5 +41,11 @@ namespace InfosNutritions.Helpers
 			}
 		}
 
-	}
+	    public static string RecentSeachList
+	    {
+	        get { return AppSettings.GetValueOrDefault(RecentSearch, SettingsDefault); }
+	        set { AppSettings.AddOrUpdateValue(RecentSearch, value); }
+	    }
+
+    }
 }

@@ -12,21 +12,17 @@ namespace InfosNutritions.Helpers
 {
     class MyHttpClient : HttpClient
     {
-        private const int TimeoutLimit = 18000;
+        private const int TimeoutLimit = 6000;
+        private readonly string _endUri;
         #region Constructor
 
-        public AzureHttpClient(string uri)
+        public MyHttpClient(string uri,string endUri)
         {
             BaseAddress = new Uri(uri);
+            _endUri = endUri;
             DefaultRequestHeaders.Accept.Clear();
             DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("text/plain"));
             DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-        }
-
-        public AzureHttpClient(string uri, string authToken) : this(uri)
-        {
-            DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", authToken);
         }
         #endregion
 
@@ -35,7 +31,7 @@ namespace InfosNutritions.Helpers
         public async Task<string> RequestWithResult(HttpMethod method, string path, object param = null)
         {
             var cancel = new CancellationTokenSource();
-            var message = new HttpRequestMessage(method, path);
+            var message = new HttpRequestMessage(method, $"{path}{_endUri}");
             if (method == HttpMethod.Post)
             {
                 message.Content = param?.GetType() == typeof(string)
@@ -53,21 +49,9 @@ namespace InfosNutritions.Helpers
                     cancel.Cancel(false);
                     return result;
                 }
-                else if (resultTask.Result.StatusCode == HttpStatusCode.NoContent)
-                {
-                    cancel.Cancel(false);
-                    throw new DataNotFoundException();
-                }
-                else if (resultTask.Result.StatusCode == HttpStatusCode.BadRequest)
-                {
-                    cancel.Cancel(false);
-                    throw new BadRequestException();
-                }
-                cancel.Cancel(false);
-                return null;
             }
             cancel.Cancel(false);
-            throw new AzureConnectivityException();
+            return null;
         }
 
         #endregion
