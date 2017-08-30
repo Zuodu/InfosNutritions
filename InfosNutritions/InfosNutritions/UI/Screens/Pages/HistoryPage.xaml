@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:globalization="clr-namespace:InfosNutritions.UI.Globalization;assembly=InfosNutritions"
+             x:Class="InfosNutritions.UI.Screens.Pages.HistoryPage"
+             Title="Historique">
+    <ContentPage.Content>
+        <StackLayout Spacing="10">
+            <Label Style="{StaticResource SubTitleLabelStyle}" Text="{globalization:Translate History_Tuto}"></Label>
+            <ListView BackgroundColor="Transparent" HasUnevenRows="True" SeparatorVisibility="None"
+                      ItemsSource="{Binding RecentList}" SelectedItem="{Binding ChosenItem}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Name}" Detail="{Binding Barcode}"></TextCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

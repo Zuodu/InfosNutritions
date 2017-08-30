@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:globalization="clr-namespace:InfosNutritions.UI.Globalization;assembly=InfosNutritions"
+             x:Class="InfosNutritions.UI.Screens.Pages.LoginPage"
+             Title="Connexion">
+    <ContentPage.Content>
+        <StackLayout Spacing="15" Padding="20,5">
+            <Label Style="{StaticResource TitleLabelStyle}" Text="{globalization:Translate Login_Title}"></Label>
+            <Label Style="{StaticResource SubTitleLabelStyle}" Text="{globalization:Translate Login_Tuto}"></Label>
+            <Entry Placeholder="{globalization:Translate Login_Hold1}" Text="{Binding Username}" PlaceholderColor="{StaticResource MyGray}"></Entry>
+            <Entry Placeholder="{globalization:Translate Login_Hold2}" Text="{Binding Password}" IsPassword="True" PlaceholderColor="{StaticResource MyGray}"></Entry>
+            <Button Style="{StaticResource ValidateButtonStyle}" Text="{globalization:Translate Validate}" Command="{Binding ValidateCommand}" Opacity="{Binding ValidateButtonOpacity}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

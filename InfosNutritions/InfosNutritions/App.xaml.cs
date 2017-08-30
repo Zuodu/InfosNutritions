@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using InfosNutritions.Init.m2oScanner.Init;
 using Xamarin.Forms;
 
 namespace InfosNutritions
@@ -12,8 +12,7 @@ namespace InfosNutritions
         public App()
         {
             InitializeComponent();
-
-            MainPage = new InfosNutritions.MainPage();
+            MainPage = Setup.InitNavigation();
         }
 
         protected override void OnStart()

@@ -41,6 +41,7 @@
     <Compile Include="Entities\FoodProduct.cs" />
     <Compile Include="Helpers\Converters\InverseBoolConverter.cs" />
     <Compile Include="Helpers\Converters\ObjectNotEmptyValueConverter.cs" />
+    <Compile Include="Helpers\DataParser.cs" />
     <Compile Include="Helpers\MyHttpClient.cs" />
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="Init\Setup.cs" />
@@ -64,13 +65,27 @@
     <Compile Include="Services\ISettingsServices.cs" />
     <Compile Include="Services\SettingsServices.cs" />
     <Compile Include="UI\Components\PageModels\ScannerPageModel.cs" />
+    <Compile Include="UI\Components\Pages\ScannerPage.xaml.cs">
+      <DependentUpon>ScannerPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\Globalization\Lang.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Lang.resx</DependentUpon>
     </Compile>
     <Compile Include="UI\Globalization\TranslateExtension.cs" />
+    <Compile Include="UI\Screens\PageModels\HistoryPageModel.cs" />
+    <Compile Include="UI\Screens\PageModels\HomePageModel.cs" />
     <Compile Include="UI\Screens\PageModels\LoginPageModel.cs" />
+    <Compile Include="UI\Screens\Pages\HistoryPage.xaml.cs">
+      <DependentUpon>HistoryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Screens\Pages\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Screens\Pages\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\Templates\PickerPageModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -150,9 +165,31 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="UI\Components\Models\" />
-    <Folder Include="UI\Components\Pages\" />
     <Folder Include="UI\Screens\Models\" />
-    <Folder Include="UI\Screens\Pages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\Screens\Pages\LoginPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\Screens\Pages\HomePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\Components\Pages\ScannerPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="UI\Screens\Pages\HistoryPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Fody.2.1.2\build\portable-net+sl+win+wpa+wp\Fody.targets" Condition="Exists('..\..\packages\Fody.2.1.2\build\portable-net+sl+win+wpa+wp\Fody.targets')" />

@@ -7,12 +7,14 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using InfosNutritions.Navigation;
 using InfosNutritions.UI.Templates;
+using PropertyChanged;
 using Xamarin.Forms;
 using ZXing;
 using ZXing.Mobile;
 
 namespace InfosNutritions.UI.Components.PageModels
 {
+    [AddINotifyPropertyChangedInterface]
     class ScannerPageModel : PickerPageModel<ZXing.Result>
     {
         #region Fields

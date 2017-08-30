@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:globalization="clr-namespace:InfosNutritions.UI.Globalization;assembly=InfosNutritions"
+             x:Class="InfosNutritions.UI.Screens.Pages.HomePage"
+             Title="Infos Nutritions">
+    <ContentPage.Content>
+        <StackLayout Padding="0" Spacing="0">
+            <!-- split 1 -->
+            <Frame Padding="28,40" BackgroundColor="{StaticResource MyLightGray}" CornerRadius="0" HasShadow="True">
+                <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                    <Label Style="{StaticResource SubTitleLabelStyle}" Text="{globalization:Translate Home_Tuto}" VerticalTextAlignment="Center"></Label>
+                    <Button Style="{StaticResource NormalButtonStyle}" Text="{globalization:Translate Home_StartScan}" Command="{Binding ScanCommand}"></Button>
+                </StackLayout>
+            </Frame>
+            <!-- Split 2 -->
+            <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Transparent" Padding="6" Spacing="6">
+                <!-- result title -->
+                <Frame Padding="8" IsVisible="{Binding ResultText,Converter={StaticResource IsNotEmptyChecker}}">
+                    <StackLayout Orientation="Horizontal" Spacing="10" HorizontalOptions="CenterAndExpand">
+                        <Label Style="{StaticResource SubTitleLabelStyle}" Text="{Binding ResultText}"></Label>
+                        <Button Style="{StaticResource ValidateButtonStyle}" Opacity="{Binding Opacity}"
+                                Text="{globalization:Translate Home_Send}" Command="{Binding RetrieveDataCommand}"></Button>
+                    </StackLayout>
+                </Frame>
+                <!-- Result detail -->
+                <Frame Padding="8" x:Name="DataFrame" HasShadow="True"
+                       IsVisible="{Binding ResultText,Converter={StaticResource IsNotEmptyChecker}}">
+                    <StackLayout>
+                        <ActivityIndicator IsRunning="True" IsVisible="{Binding WebWorking}"></ActivityIndicator>
+                        <Grid IsVisible="{Binding WebWorking,Converter={StaticResource InverseBool}}"
+                              HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height="*"></RowDefinition>
+                                <RowDefinition Height=".7*"></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Label Grid.Column="0" Grid.Row="0" Text="{globalization:Translate Res_Name}" HorizontalOptions="End" VerticalOptions="Center"></Label>
+                            <Label Grid.Column="1" Grid.Row="0" Text="{Binding ResultProduct.Name}" HorizontalOptions="Start" VerticalOptions="Center"></Label>
+                            <Label Grid.Column="0" Grid.Row="1" Text="{globalization:Translate Res_Energy}" HorizontalOptions="End" VerticalOptions="Center"></Label>
+                            <Label Grid.Column="1" Grid.Row="1" Text="{Binding ResultProduct.Energy}" HorizontalOptions="Start" VerticalOptions="Center"></Label>
+                            <Label Grid.Column="0" Grid.Row="2" Text="{globalization:Translate Res_Serving}" HorizontalOptions="End" VerticalOptions="Center"></Label>
+                            <Label Grid.Column="1" Grid.Row="2" Text="{Binding ResultProduct.Serving}" HorizontalOptions="Start" VerticalOptions="Center"></Label>
+                        </Grid>
+                        <Image Source="{Binding ResultProduct.ImgUrl}" HorizontalOptions="Center"></Image>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

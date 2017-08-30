@@ -71,11 +71,92 @@ namespace InfosNutritions.UI.Globalization {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Informations Nutritionnelles.
+        ///   Looks up a localized string similar to Infos Nutritions.
         /// </summary>
         internal static string App_Name {
             get {
                 return ResourceManager.GetString("App_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Le produit recherché n&apos;existe pas dans la base de données....
+        /// </summary>
+        internal static string Error_NotFound {
+            get {
+                return ResourceManager.GetString("Error_NotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Oups !.
+        /// </summary>
+        internal static string Error_Title {
+            get {
+                return ResourceManager.GetString("Error_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Menu.
+        /// </summary>
+        internal static string Global_MenuTitle {
+            get {
+                return ResourceManager.GetString("Global_MenuTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Historique.
+        /// </summary>
+        internal static string History_Title {
+            get {
+                return ResourceManager.GetString("History_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Historique de recherches.
+        /// </summary>
+        internal static string History_Tuto {
+            get {
+                return ResourceManager.GetString("History_Tuto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Envoyer.
+        /// </summary>
+        internal static string Home_Send {
+            get {
+                return ResourceManager.GetString("Home_Send", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Démarrer.
+        /// </summary>
+        internal static string Home_StartScan {
+            get {
+                return ResourceManager.GetString("Home_StartScan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Page d&apos;accueil.
+        /// </summary>
+        internal static string Home_Title {
+            get {
+                return ResourceManager.GetString("Home_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Commencez par scanner un produit.
+        /// </summary>
+        internal static string Home_Tuto {
+            get {
+                return ResourceManager.GetString("Home_Tuto", resourceCulture);
             }
         }
         
@@ -98,11 +179,110 @@ namespace InfosNutritions.UI.Globalization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nom d&apos;utilisateur.
+        /// </summary>
+        internal static string Login_Hold1 {
+            get {
+                return ResourceManager.GetString("Login_Hold1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mot de passe.
+        /// </summary>
+        internal static string Login_Hold2 {
+            get {
+                return ResourceManager.GetString("Login_Hold2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Infos Nutritions.
+        /// </summary>
+        internal static string Login_Title {
+            get {
+                return ResourceManager.GetString("Login_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Veuillez vous connecter.
+        /// </summary>
+        internal static string Login_Tuto {
+            get {
+                return ResourceManager.GetString("Login_Tuto", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ok.
         /// </summary>
         internal static string Ok {
             get {
                 return ResourceManager.GetString("Ok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Energie :.
+        /// </summary>
+        internal static string Res_Energy {
+            get {
+                return ResourceManager.GetString("Res_Energy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dénomination :.
+        /// </summary>
+        internal static string Res_Name {
+            get {
+                return ResourceManager.GetString("Res_Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Portions de :.
+        /// </summary>
+        internal static string Res_Serving {
+            get {
+                return ResourceManager.GetString("Res_Serving", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Lampe torche : .
+        /// </summary>
+        internal static string Scan_Flash {
+            get {
+                return ResourceManager.GetString("Scan_Flash", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Placez le téléphone au-dessus du code-barres.
+        /// </summary>
+        internal static string Scan_TopText {
+            get {
+                return ResourceManager.GetString("Scan_TopText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Saisir le code-barres manuellement.
+        /// </summary>
+        internal static string Scanner_EntryDefault {
+            get {
+                return ResourceManager.GetString("Scanner_EntryDefault", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Valider.
+        /// </summary>
+        internal static string Validate {
+            get {
+                return ResourceManager.GetString("Validate", resourceCulture);
             }
         }
     }

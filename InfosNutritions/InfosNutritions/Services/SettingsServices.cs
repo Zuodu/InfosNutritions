@@ -40,8 +40,7 @@ namespace InfosNutritions.Services
             }
             else
             {
-                List<FoodProduct> newList;
-                newList = int.TryParse(AppResources.RecentSeach_Capacity, out int capacity) ?
+                var newList = int.TryParse(AppResources.RecentSeach_Capacity, out int capacity) ?
                     new List<FoodProduct>(capacity) : new List<FoodProduct>(20);
                 newList.Add(e);
                 Settings.RecentSeachList = JsonConvert.SerializeObject(newList);

@@ -11,7 +11,7 @@ namespace InfosNutritions.Entities
         public string Barcode { get; set; }
         public string Name { get; set; }
         public string ImgUrl { get; set; }
-        public int Energy { get; set; }
+        public int? Energy { get; set; }
         public string Serving { get; set; }
     }
 }

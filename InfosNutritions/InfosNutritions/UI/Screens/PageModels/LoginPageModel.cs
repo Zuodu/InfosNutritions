@@ -10,10 +10,12 @@ using InfosNutritions.Navigation;
 using InfosNutritions.Services;
 using InfosNutritions.UI.Globalization;
 using Plugin.Settings;
+using PropertyChanged;
 using Xamarin.Forms;
 
 namespace InfosNutritions.UI.Screens.PageModels
 {
+    [AddINotifyPropertyChangedInterface]
     public class LoginPageModel : FreshBasePageModel
     {
         #region Fields
@@ -33,10 +35,32 @@ namespace InfosNutritions.UI.Screens.PageModels
 
         #region properties
 
-        public string Username { get; set; }
-        public string Password { get; set; }
+        private string _username;
+        public string Username
+        {
+            get { return _username; }
+            set
+            {
+                _username = value;
+                RaisePropertyChanged("ValidateButtonOpacity");
+            }
+        }
+        private string _password;
+        public string Password
+        {
+            get
+            {
+                return _password;
+            }
+            set
+            {
+                _password = value;
+                RaisePropertyChanged("ValidateButtonOpacity");
+            }
+        }
+
         public bool IsValidateButtonActive => !string.IsNullOrEmpty(Username) && !string.IsNullOrEmpty(Password);
-        public double ValidateButtonOpacity => IsValidateButtonActive ? 1 : 0.3;
+        public double ValidateButtonOpacity => IsValidateButtonActive ? 1.0 : 0.3;
 
         #endregion
 

@@ -121,7 +121,34 @@
     <value>Avec cette application, scannez un code-barres et découvrez les informations nutritionnelles du produit, tel que la valeur énergétique par exemple.</value>
   </data>
   <data name="App_Name" xml:space="preserve">
-    <value>Informations Nutritionnelles</value>
+    <value>Infos Nutritions</value>
+  </data>
+  <data name="Error_NotFound" xml:space="preserve">
+    <value>Le produit recherché n'existe pas dans la base de données...</value>
+  </data>
+  <data name="Error_Title" xml:space="preserve">
+    <value>Oups !</value>
+  </data>
+  <data name="Global_MenuTitle" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="History_Title" xml:space="preserve">
+    <value>Historique</value>
+  </data>
+  <data name="History_Tuto" xml:space="preserve">
+    <value>Historique de recherches</value>
+  </data>
+  <data name="Home_Send" xml:space="preserve">
+    <value>Envoyer</value>
+  </data>
+  <data name="Home_StartScan" xml:space="preserve">
+    <value>Démarrer</value>
+  </data>
+  <data name="Home_Title" xml:space="preserve">
+    <value>Page d'accueil</value>
+  </data>
+  <data name="Home_Tuto" xml:space="preserve">
+    <value>Commencez par scanner un produit</value>
   </data>
   <data name="Login_Error_Body" xml:space="preserve">
     <value>Le nom d'utilisateur ou le mot de passe ne correspond pas. Veuillez réessayer</value>
@@ -129,7 +156,40 @@
   <data name="Login_Error_Title" xml:space="preserve">
     <value>Oups ! Saisie erronée...</value>
   </data>
+  <data name="Login_Hold1" xml:space="preserve">
+    <value>Nom d'utilisateur</value>
+  </data>
+  <data name="Login_Hold2" xml:space="preserve">
+    <value>Mot de passe</value>
+  </data>
+  <data name="Login_Title" xml:space="preserve">
+    <value>Infos Nutritions</value>
+  </data>
+  <data name="Login_Tuto" xml:space="preserve">
+    <value>Veuillez vous connecter</value>
+  </data>
   <data name="Ok" xml:space="preserve">
     <value>ok</value>
+  </data>
+  <data name="Res_Energy" xml:space="preserve">
+    <value>Energie :</value>
+  </data>
+  <data name="Res_Name" xml:space="preserve">
+    <value>Dénomination :</value>
+  </data>
+  <data name="Res_Serving" xml:space="preserve">
+    <value>Portions de :</value>
+  </data>
+  <data name="Scanner_EntryDefault" xml:space="preserve">
+    <value>Saisir le code-barres manuellement</value>
+  </data>
+  <data name="Scan_Flash" xml:space="preserve">
+    <value>Lampe torche : </value>
+  </data>
+  <data name="Scan_TopText" xml:space="preserve">
+    <value>Placez le téléphone au-dessus du code-barres</value>
+  </data>
+  <data name="Validate" xml:space="preserve">
+    <value>Valider</value>
   </data>
 </root>
